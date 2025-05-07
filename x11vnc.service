@@ -1,0 +1,11 @@
+[Unit]
+Description=x11vnc Service
+After=display-manager.service network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/x11vnc -display :0 -forever -shared -nopw -loop -auth /run/user/1000/gdm/Xauthority
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

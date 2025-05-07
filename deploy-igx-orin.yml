@@ -16,7 +16,7 @@
         - ansible.builtin.apt_key:
             url: https://apt.kitware.com/keys/kitware-archive-latest.asc
         - ansible.builtin.apt_repository:
-            repo: deb https://apt.kitware.com/ubuntu/ jammy main
+            repo: deb https://apt.kitware.com/ubuntu/ {{ ansible_facts["distribution_release"] }} main
         - ansible.builtin.apt:
             upgrade: dist
             update_cache: true

@@ -1,3 +1,5 @@
 ---
 collections:
   - hifis.toolkit
+  - community.general
+  - ansible.posix
